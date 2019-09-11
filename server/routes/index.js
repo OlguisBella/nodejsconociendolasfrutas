@@ -15,6 +15,7 @@ module.exports = (app) => {
   app.post('/api/fruta', frutaController.create);
   app.post('/api/puntaje', puntajeController.createPuntaje); 
   app.post('/api/pregunta', preguntaController.create);
+  app.post('/api/nivel', nivelController.createNivel);
   app.post('/api/opcionRespuesta', opcionRespuestaController.create);
   
 

@@ -4,9 +4,8 @@ module.exports = {
   create(req, res) {
     return OpcionRespuesta
       .create({
-        idPregunta:req.body.idPregunta,
-        idOpcion: req.body.idOpcion,
-        opcionRespuesta: req.body.opcionRespuesta,
+        descripcion:req.body.descripcion,
+        idPregunta: req.body.idPregunta,  
         respuestaValida: req.body.respuestaValida
       })
       .then(opcionrespuesta => res.status(201).send(opcionrespuesta))
@@ -15,7 +14,7 @@ module.exports = {
   list(req, res) {
     return OpcionRespuesta
     .findAll({
-      attributes: ['id', 'idPregunta','idOpcion','opcionRespuesta','respuestaValida']
+      attributes: ['id', 'descripcion','idPregunta','respuestaValida']
     })
       .then(opcionRespuesta => res.status(200).send(opcionRespuesta))
       .catch(error => res.status(400).send(error));
@@ -31,9 +30,8 @@ module.exports = {
         }
         return OpcionRespuesta
           .update({
-            idPregunta:req.body.idRespuesta,   
-            idOpcion:req.body.idOpcion,         
-            opcionRespuesta:req.body.opcionRespuesta,           
+            descripcion:req.body.descripcion,   
+            idPregunta:req.body.idPregunta,                
             respuestaValida:req.body.respuestaValida            
           })
           .then(updatedOpcionRespuesta => res.status(200).send(updatedOpcionRespuesta))

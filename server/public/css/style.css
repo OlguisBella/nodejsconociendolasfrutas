@@ -79,10 +79,16 @@ font-size:25px;
   margin: auto;
 }
 
+#logout{
+  width: 3em;
+  height: 3em;
+  float: left;
+}
+
 #setting{
   width: 3em;
   height: 3em;
-  float: right;
+  float: left;
 }
 
 .image-fade {

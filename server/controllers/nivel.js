@@ -4,7 +4,9 @@ module.exports = {
     createNivel(req, res) {
         return Nivel
           .create({
-            descripcion: req.body.descripcion,
+            descripcion:req.body.descripcion,
+            valor:req.body.valor,
+            categoriaid:req.body.categoriaid
           })
           .then(nivel => res.status(201).send(nivel))
           .catch(error => res.status(400).send(error));
